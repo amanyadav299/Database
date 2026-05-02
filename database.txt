@@ -1,0 +1,60 @@
+CREATE TABLE Personal_Info(
+first_name VARCHAR2(10),
+middle_name VARCHAR2(10),
+last_name VARCHAR2(10),
+citizenship_no NUMBER(10) PRIMARY KEY,
+age NUMBER(10),
+gender VARCHAR2(5));
+
+CREATE TABLE Contact_Info(
+  contact_no NUMBER(10) PRIMARY KEY,
+  tel_no NUMBER(10),
+  email VARCHAR2(20),
+  work_email VARCHAR2(20),
+  address VARCHAR2(20)
+);
+
+CREATE TABLE Medical_Info(
+name VARCHAR2(30),
+patient_No NUMBER(10) PRIMARY KEY,
+date_of_birth DATE,
+blood_group VARCHAR2(3),
+insurance_no NUMBER(10));
+
+CREATE TABLE Experience_Info(
+name VARCHAR2(20),
+employee_ID NUMBER(10) PRIMARY KEY,
+contact_no NUMBER(10),
+profession  VARCHAR2(15),
+Company VARCHAR2(20),
+address VARCHAR2(20));
+
+ALTER TABLE Personal_Info ADD(
+email VARCHAR2(20));
+
+ALTER TABLE Personal_Info MODIFY(
+citizenship_no DEFAULT '1234567');
+
+ALTER TABLE Personal_Info
+ADD CONSTRAINT pk_personal_info
+PRIMARY KEY(Citizenship_no);
+
+INSERT INTO personal_info(first_name, middle_name, last_name)
+VALUES('Aman', 'Kumar', 'Yadav');
+
+INSERT INTO personal_info(age,gender) VALUES(20,'male');
+
+INSERT INTO personal_info(
+  citizenship_no, first_name, middle_name, last_name, age, gender, email
+)
+VALUES(
+  1, 'John', 'K', 'Doe', 20, 'male', 'john@example.com'
+);
+
+select queries
+
+SELECT * FROM product where price>10 and price <30;
+
+SELECT p.name, p.price FROM product AS p;
+
+SELECT * FROM product ORDER BY id DESC;
