@@ -1,0 +1,46 @@
+DECLARE
+SET SERVEROUTPUT ON;
+vn_counter NUMBER(3);
+BEGIN ,
+WHILE 3>=vn_counter LOOP
+DBMS_OUTPUT.PUT_LINE('counter has not exceeded 3');
+vn_counter:=vn_counter+1;
+END LOOP;
+END;
+
+/
+
+for(int a=0; a<10; a++){
+System.out.println(a);
+}
+
+BEGIN
+
+FOR vn_counter IN 1..4 LOOP
+DBMS_OUTPUT.PUT_LINE('Loop number' || vn_counter);
+
+END LOOP;
+END;
+/
+
+
+Using a FOR loop put each letter of the name on a new line
+You might want to use
+vc_name VARCHAR(30):='CAROLE'
+SUBSTR(vc_name, vn_counter,1)
+and
+LENGTH(vc_name)
+Oracle array starts at index position 1 not 0
+0 is replaced by 1
+
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+   vc_name VARCHAR2(30) := 'AMAN';
+BEGIN
+   FOR vn_counter IN 1..LENGTH(vc_name) LOOP
+      DBMS_OUTPUT.PUT_LINE(SUBSTR(vc_name, vn_counter, 1));
+   END LOOP;
+END;
+/
