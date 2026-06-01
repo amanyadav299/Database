@@ -1,0 +1,174 @@
+-- 1. ceiling value of average salary
+SELECT CEIL(AVG(salary)) 
+FROM staff;
+
+-- 2. Show ceiling value of product prices
+SELECT product_name, CEIL(price) 
+FROM products;
+
+-- 3. Show ceiling of employee bonus
+SELECT firstname, CEIL(bonus)
+FROM employee;
+
+-- 4. Show ceiling of tax amount
+SELECT order_id, CEIL(tax_amount)
+FROM orders;
+
+-- 5. Show ceiling of student marks average
+SELECT student_name, CEIL(avg_marks)
+FROM students;
+
+
+
+
+-- 1. Show floor value of average salary
+SELECT FLOOR(AVG(salary)) 
+FROM staff;
+
+-- 2. Show floor value of prices
+SELECT product_name, FLOOR(price) 
+FROM products;
+
+-- 3. Show floor value of bonus
+SELECT firstname, FLOOR(bonus) 
+FROM employee;
+
+-- 4. Show floor value of tax amount
+SELECT order_id, FLOOR(tax_amount)
+FROM orders;
+
+-- 5. Show floor value of average marks
+SELECT student_name, FLOOR(avg_marks) 
+FROM students;
+
+
+
+-- 1. Round average salary to 2 decimal places
+SELECT ROUND(AVG(salary),2) AS rounded_salary
+FROM staff;
+
+-- 2. Round product prices
+SELECT product_name, ROUND(price,1) AS rounded_price
+FROM products;
+
+-- 3. Round employee bonus
+SELECT firstname, ROUND(bonus,0) AS rounded_bonus
+FROM employee;
+
+-- 4. Round tax amount
+SELECT order_id, ROUND(tax_amount,2) AS rounded_tax
+FROM orders;
+
+-- 5. Round average marks
+SELECT student_name, ROUND(avg_marks,1) AS rounded_marks
+FROM students;
+
+
+-- 1. Combine first name and surname
+SELECT CONCAT(firstname,' ',surname) AS full_name
+FROM staff;
+
+-- 2. Create employee ID with name
+SELECT CONCAT(emp_id,'-',firstname) AS employee_info
+FROM employee;
+
+-- 3. Combine city and country
+SELECT CONCAT(city,', ',country) AS address
+FROM customers;
+
+-- 4. Combine product name and category
+SELECT CONCAT(product_name,' - ',category) AS product_details
+FROM products;
+
+-- 5. Combine student first and last names
+SELECT CONCAT(first_name,' ',last_name) AS student_name
+FROM students;
+
+
+
+-- 1. Get first 3 letters of firstname
+SELECT SUBSTR(firstname,1,3) AS short_name
+FROM staff;
+
+-- 2. Get first 5 characters of product name
+SELECT SUBSTR(product_name,1,5) AS short_product
+FROM products;
+
+-- 3. Get domain from email
+SELECT SUBSTR(email,5,10) AS email_part
+FROM employee;
+
+-- 4. Get first 4 characters of city
+SELECT SUBSTR(city,1,4) AS short_city
+FROM customers;
+
+-- 5. Get first 2 characters of course code
+SELECT SUBSTR(course_code,1,2) AS code_part
+FROM courses;
+
+
+
+-- 1. Remove spaces from firstname
+SELECT TRIM(firstname) AS clean_name
+FROM staff;
+
+-- 2. Remove spaces from product names
+SELECT TRIM(product_name) AS clean_product
+FROM products;
+
+-- 3. Remove spaces from city names
+SELECT TRIM(city) AS clean_city
+FROM customers;
+
+-- 4. Remove leading and trailing spaces from email
+SELECT TRIM(email) AS clean_email
+FROM employee;
+
+-- 5. Remove extra spaces from course names
+SELECT TRIM(course_name) AS clean_course
+FROM courses;
+
+
+
+
+-- 1. Exit loop after 5 numbers
+DECLARE
+  i NUMBER := 1;
+BEGIN
+  LOOP
+    DBMS_OUTPUT.PUT_LINE(i);
+    i := i + 1;
+    EXIT WHEN i > 5;
+  END LOOP;
+END;
+/
+
+
+-- 2. Exit loop when salary is greater than 5000
+DECLARE
+  sal NUMBER := 1000;
+BEGIN
+  LOOP
+    DBMS_OUTPUT.PUT_LINE(sal);
+    sal := sal + 1000;
+    EXIT WHEN sal > 5000;
+  END LOOP;
+END;
+/
+
+
+
+-- 3. Exit loop after printing 10 even numbers
+DECLARE
+  i NUMBER := 2;
+BEGIN
+  LOOP
+    DBMS_OUTPUT.PUT_LINE(i);
+    i := i + 2;
+    EXIT WHEN i > 20;
+  END LOOP;
+END;
+/
+3
+
+
